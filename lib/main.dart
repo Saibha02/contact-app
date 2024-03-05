@@ -1,20 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_5/view/pageui.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child:  MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-  
+  Widget build(BuildContext context, WidgetRef ref) {
+    return  MaterialApp(
+      title: 'contact app',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.brown,
+        
+        )
+      ),
+      darkTheme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.grey
+        )
+      ),
+
+
+
+
+
+      home:Mycontact(),
       
-      home: const ,
     );
   }
 }
